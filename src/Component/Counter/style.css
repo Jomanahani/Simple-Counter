@@ -1,0 +1,28 @@
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 16rem;
+}
+.counter p{
+    padding: 1rem;
+}
+button {
+    width: 4.5rem;
+    height: 4rem;
+    font-size: 2rem;
+    margin: 0.4rem;
+    border: none;
+    color: white;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+.decrement{
+    background-color: red;
+}
+.increment{
+    background-color: rgb(39, 176, 39);
+}
