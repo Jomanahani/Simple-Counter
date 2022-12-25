@@ -22,7 +22,6 @@ class Counters extends Component {
         }),
       };
     });
-    this.updateTotal(id, steps, "increment");
   };
 
   onDecrement = (id, steps = 1) => {
@@ -32,21 +31,9 @@ class Counters extends Component {
           if (item.id === id && item.count >= steps) {
             return { ...item, count: item.count - steps };
           }
-          this.updateTotal(id, steps, "decrement");
           return item;
         }),
       };
-    });
-  };
-
-  updateTotal = (id, steps, action) => {
-    this.setState((prevState) => {
-      if (action === "decrement" && prevState.Total >= steps) {
-        return { Total: prevState.Total - steps };
-      }
-      if (action === "increment") {
-        return { Total: prevState.Total + steps };
-      }
     });
   };
 
@@ -66,7 +53,10 @@ class Counters extends Component {
           />
         ))}
         <p>
-          <strong>Total Counter :</strong> {this.state.Total}{" "}
+          <strong>Total Counter :  </strong>
+           {this.state.counters.reduce(
+            (accumulator, currentValue) => accumulator + currentValue.count,0
+          )}
         </p>
       </div>
     );
